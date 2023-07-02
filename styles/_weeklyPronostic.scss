@@ -1,0 +1,35 @@
+@import "var";
+
+.weekly-pronostic{
+    padding: 4em .5em;
+    @include flex(row, space-evenly, normal, 0, 1, auto, wrap);
+    background-color: $veryDarkPurple;
+    .pronostic-card{
+        @include flex(column, space-evenly, center);
+        background-color: $darkPurple;
+        margin: 1em;
+        width: 120px;
+        height: 177px;
+        header{
+            height: max-content;
+            h3{
+                text-align: center;
+                color: $whiteSmoke;
+            }
+        }
+        img{
+            width: 6em;
+            height: auto;
+        }
+        .temperature{
+            @include flex(row, space-around, center);
+            width: 80%;
+            .max{
+                color: $whiteSmoke;
+            }
+            .min{
+                color: $lightPurpleV1;
+            }
+       }
+   }
+}

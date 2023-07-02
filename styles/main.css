@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&family=Raleway:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  background-color: #1E213A;
+  height: 115vh;
+  position: relative;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  padding: 1.5em 0;
+}
+header nav .checkbox-container, header nav .locate-btn {
+  background-color: #6E707A;
+}
+header nav .checkbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+  width: 161px;
+  height: 40px;
+  color: #E7E7EB;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+header nav .checkbox-container #cb {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+header nav .checkbox-container #cb:hover {
+  cursor: pointer;
+}
+header nav .checkbox-container #cb #content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header nav .locate-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+header nav .locate-btn svg {
+  height: 26px;
+  width: 26px;
+}
+header nav .locate-btn svg path {
+  fill: #E7E7EB;
+}
+header .weather .weather-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  height: 18em;
+  background-image: url(../assets/img/Cloud-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+header .weather .weather-icon img {
+  width: 150px;
+  height: auto;
+}
+header .weather .temperature {
+  margin: 1em 0;
+  text-align: center;
+}
+header .weather .temperature .cantity, header .weather .temperature .unit {
+  font-weight: 600;
+}
+header .weather .temperature .cantity {
+  color: #E7E7EB;
+  font-size: 114px;
+}
+header .weather .temperature .unit {
+  color: #88869D;
+  font-size: 54px;
+}
+header .weather .weather-status {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #6E707A;
+}
+header .weather .date-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  color: #88869D;
+}
+header .weather .date-container .dot::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 3px;
+  background-color: #88869D;
+  margin: 0 1em;
+  border-radius: 100%;
+}
+header .weather .location-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+header .weather .location-container .location {
+  font-size: 18px;
+  color: #88869D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+header .weather .location-container .location svg {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.25em;
+}
+header .weather .location-container .location svg path {
+  fill: #88869D;
+}
+
+.weekly-pronostic {
+  padding: 4em 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: normal;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  background-color: #100E1D;
+}
+.weekly-pronostic .pronostic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  background-color: #1E213A;
+  margin: 1em;
+  width: 120px;
+  height: 177px;
+}
+.weekly-pronostic .pronostic-card header {
+  height: -moz-max-content;
+  height: max-content;
+}
+.weekly-pronostic .pronostic-card header h3 {
+  text-align: center;
+  color: #E7E7EB;
+}
+.weekly-pronostic .pronostic-card img {
+  width: 6em;
+  height: auto;
+}
+.weekly-pronostic .pronostic-card .temperature {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.weekly-pronostic .pronostic-card .temperature .max {
+  color: #E7E7EB;
+}
+.weekly-pronostic .pronostic-card .temperature .min {
+  color: #A09FB1;
+}
+
+.highlights {
+  background-color: #100E1D;
+  padding: 2em;
+}
+.highlights header {
+  background-color: #100E1D;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 24px;
+  color: #E7E7EB;
+}
+.highlights .weather-data {
+  background-color: #1E213A;
+  height: 204px;
+  max-width: 320px;
+  margin: 2em auto;
+}
+.highlights .weather-data header {
+  text-align: center;
+  background-color: #1E213A;
+  font-size: 16px;
+  padding: 1em 0;
+}
+.highlights .weather-data .data-container {
+  text-align: center;
+  margin: auto 0;
+}
+.highlights .weather-data .data-container span.cantity, .highlights .weather-data .data-container span.unit {
+  color: #E7E7EB;
+}
+.highlights .weather-data .data-container span.cantity {
+  font-size: 64px;
+  font-weight: 700;
+}
+.highlights .weather-data .data-container span.unit {
+  font-size: 36px;
+}
+.highlights .weather-data .progress-bar {
+  margin: 1em 0;
+}
+.highlights .weather-data .progress-bar .indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  width: 229px;
+  margin: 0.25em auto;
+  color: #A09FB1;
+}
+.highlights .weather-data .progress-bar .bar {
+  width: 229px;
+  height: 8px;
+  background-color: #A09FB1;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+.highlights .weather-data .progress-bar .bar #progress {
+  background-color: #FFEC65;
+  height: 8px;
+  width: 84%;
+  border-radius: 25px;
+}
+.highlights .weather-data .progress-bar .bar::after {
+  content: "%";
+  color: #A09FB1;
+  position: relative;
+  left: 107px;
+  top: 3px;
+}
+
+.menu-wrapper {
+  background-color: #1E213A;
+  position: absolute;
+  height: 40em;
+  right: 0;
+  left: 0;
+  bottom: 110%;
+  transition: all 0.3s ease;
+  box-shadow: 0px 10px 10px rgba(16, 14, 29, 0.4588235294);
+}
+.menu-wrapper .search-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+.menu-wrapper .search-nav .close-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.menu-wrapper .search-nav .close-icon-container svg {
+  height: 20px;
+  width: 20px;
+}
+.menu-wrapper .search-nav .close-icon-container svg:hover {
+  cursor: pointer;
+}
+.menu-wrapper .search-nav .close-icon-container svg path {
+  fill: #E7E7EB;
+}
+.menu-wrapper .search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+}
+.menu-wrapper .search-bar .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  margin-right: 1em;
+  outline: 1px solid #E7E7EB;
+  padding: 0.75em 1em;
+}
+.menu-wrapper .search-bar .input-container svg {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+.menu-wrapper .search-bar .input-container svg path {
+  fill: #6E707A;
+}
+.menu-wrapper .search-bar .input-container #location {
+  background-color: transparent;
+  border: none;
+  font-family: "Raleway", sans-serif;
+}
+.menu-wrapper .search-bar #search {
+  padding: 1em;
+  background-color: #3C47E9;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  color: #E7E7EB;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+@mixin flex($flexdir,$juscon, $alitem, $flexgrow:0, $flexshrink:0, $flexbasis:auto, $flex-wrap:nowrap){
+    display: flex;
+    flex-direction: $flexdir;
+    justify-content: $juscon;
+    align-items: $alitem;
+    flex: $flexgrow $flexshrink $flexbasis;
+    flex-wrap: wrap;
+}
+
+
+%raleway{
+    font-family: "Raleway", sans-serif;
+}

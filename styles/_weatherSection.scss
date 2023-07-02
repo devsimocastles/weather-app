@@ -1,0 +1,123 @@
+@import "var";
+
+// Mobile First Styles //////////////////////
+header{
+    background-color: $darkPurple;
+    height: 115vh;
+    position: relative;
+    nav{
+        @include flex(row, space-around,center);
+        padding: 1.5em 0;
+
+        .checkbox-container, .locate-btn{
+            background-color: $gray;
+        }
+
+        .checkbox-container{
+            @include flex(column, center,center);
+            position: relative;
+            width: 161px;
+            height: 40px;
+            color: $whiteSmoke;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            #cb{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                &:hover{
+                    cursor: pointer;
+                }
+                #content{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .locate-btn{
+            @include flex(row,center,center);
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 100%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            svg{
+                height: 26px;
+                width: 26px;
+                path{
+                    fill: $whiteSmoke;
+                }
+            }
+        }
+    }
+    .weather{
+        .weather-icon{
+            @include flex(row,center,center);
+            height: 18em;
+            background-image: url(../assets/img/Cloud-background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            img{
+                width:150px;
+                height:auto;
+            }
+        }
+        .temperature{
+            margin: 1em 0;
+            text-align: center;
+            .cantity, .unit{
+                font-weight: 600;
+            }
+            .cantity{
+                color:$whiteSmoke;
+                font-size: 114px;
+            }
+            .unit{
+                color: $lightPurpleV2;
+                font-size: 54px;
+            }
+        }
+        .weather-status{
+            text-align: center;
+            margin: 1em 0;
+            font-size: 26px;
+            font-weight: 600;
+            color: $gray;
+        }
+        .date-container{
+            @include flex(row, center,center);
+            color: $lightPurpleV2;
+            .dot::after{
+                content: "";
+                display: block;
+                height: 3px;
+                width: 3px;
+                background-color: $lightPurpleV2;
+                margin: 0 1em;
+                border-radius: 100%
+               
+            }
+        }
+        .location-container{
+            @include flex(row, center, center);
+            margin: 2em 0 ;
+            .location{
+                font-size: 18px;
+                color: $lightPurpleV2;
+                @include flex(row, center, center);
+                svg{
+                    display: inline-block;
+                    width: 2em;
+                    height: 2em;
+                    margin-right: .25em;
+                    path{
+                        fill: $lightPurpleV2;
+                    }
+                }
+            }
+        }
+    }
+}

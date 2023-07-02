@@ -1,0 +1,21 @@
+@import "var";
+@import "abstract";
+@import "weatherSection";
+@import "weeklyPronostic";
+@import "highlights";
+@import "menuWrapper";
+
+// Raleway font /////////////////////////////
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&family=Raleway:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
+
+// RESET ////////////////////////////////////
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @extend %raleway;
+}
+

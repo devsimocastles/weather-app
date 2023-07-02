@@ -1,0 +1,68 @@
+@import "var";
+
+.highlights{
+    background-color: $veryDarkPurple;
+    padding: 2em;
+    header{
+        background-color: $veryDarkPurple;
+        height: max-content;
+        font-size: 24px;
+        color: $whiteSmoke;
+    }
+    .weather-data{
+        background-color: $darkPurple;
+        height: 204px;
+        max-width: 320px;
+        margin: 2em auto;
+        header{
+            text-align: center;
+            background-color: $darkPurple;
+            font-size: 16px;
+            padding: 1em 0;
+        }
+        .data-container{
+            text-align: center;
+            margin: auto 0;
+            span.cantity, span.unit{
+                color: $whiteSmoke;
+            }
+            span.cantity{
+                font-size: 64px;
+                font-weight: 700;
+            }
+            span.unit{
+                font-size: 36px;
+            }
+        }
+        .progress-bar{
+            margin: 1em 0;
+            .indicator{
+                @include flex(row, space-between, center);
+                width: 229px;
+                margin: .25em auto;
+                color: $lightPurpleV1;
+            }
+            .bar{
+                width: 229px;
+                height: 8px;
+                background-color:$lightPurpleV1;
+                margin: 0 auto;
+                border-radius: 25px;
+                #progress{
+                    background-color: $yellow;
+                    height: 8px;
+                    width: 84%;
+                    border-radius: 25px;
+                }
+                &::after{
+                    content: "%";
+                    color: $lightPurpleV1;
+                    position: relative;
+                    left: 107px;
+                    top: 3px;
+                }
+            }
+        }
+    }
+
+}

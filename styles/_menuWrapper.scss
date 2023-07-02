@@ -1,0 +1,64 @@
+@import "var";
+
+
+.menu-wrapper{
+    background-color: $darkPurple;
+    position: absolute;
+    height: 40em;
+    right: 0;
+    left: 0;
+    bottom: 110%;
+    transition: all .3s ease;
+    box-shadow: 0px 10px 10px #100e1d75;
+    .search-nav{
+        @include flex(column,center,center);
+        .close-icon-container{
+            @include flex(row, flex-end,center);
+            width: 90%;
+            svg{
+                height: 20px;
+                width: 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+                path{
+                    fill: $whiteSmoke;
+                }
+            }
+        }
+    }
+    .search-bar{
+        @include flex(row, space-evenly,center);
+        margin-top: 1.5em;
+        .input-container{
+            @include flex(row, space-evenly,center);
+            margin-right: 1em;
+            outline: 1px solid $whiteSmoke;
+            padding: .75em 1em;
+            svg{
+                height: 20px;
+                width: 20px;
+                display: inline-block;
+                margin-right: .5em;
+                path{
+                    fill: $gray;
+                }
+            }
+            #location{
+                background-color: transparent;
+                border: none;
+                font-family: "Raleway", sans-serif;
+            }
+        }
+        #search{
+            padding: 1em;
+            background-color: $bluePurple;
+            border: none;
+            font-family: "Raleway",sans-serif;
+            color: $whiteSmoke;
+            font-size: .9em;
+            font-weight: 600;
+        }
+    }
+}
+
