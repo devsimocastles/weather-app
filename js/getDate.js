@@ -1,6 +1,7 @@
 export default showDate;
-const currentDate = new Date();
-function showDate(currentDate) {
+
+function showDate() {
+    const currentDate = new Date();
     console.log(currentDate);
 }
 
