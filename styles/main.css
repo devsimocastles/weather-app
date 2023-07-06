@@ -133,6 +133,15 @@ header .weather .location-container {
   flex-wrap: wrap;
   margin: 2em 0;
 }
+header .weather .location-container svg {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.25em;
+}
+header .weather .location-container svg path {
+  fill: #88869D;
+}
 header .weather .location-container .location {
   font-size: 18px;
   color: #88869D;
@@ -142,15 +151,6 @@ header .weather .location-container .location {
   align-items: center;
   flex: 0 0 auto;
   flex-wrap: wrap;
-}
-header .weather .location-container .location svg {
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  margin-right: 0.25em;
-}
-header .weather .location-container .location svg path {
-  fill: #88869D;
 }
 
 .weekly-pronostic {
@@ -264,7 +264,7 @@ header .weather .location-container .location svg path {
 .highlights .weather-data .progress-bar .bar #progress {
   background-color: #FFEC65;
   height: 8px;
-  width: 84%;
+  width: 0%;
   border-radius: 25px;
 }
 .highlights .weather-data .progress-bar .bar::after {

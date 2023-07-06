@@ -1,6 +1,15 @@
 import showDate from "./getDate.js";
 export default showCurrentWeatherData;
 
+//HTML COMPONENTS////////////////////////////
+const temperature = document.querySelector(".cantity");
+const weatherStatus = document.querySelector(".weather-status");;
+const todayDate = document.getElementById("date");
+const windSpeed = document.getElementById("windSpeed");
+const humidityNum = document.getElementById("humidityPercentage");
+const visibilityNum = document.getElementById("visibilityCantity");
+const pressureNum = document.getElementById("airPressureCantity");
+const progressBar = document.getElementById("progress");
 
 //FUNCTIONS///////////////////
 function getWeatherStatus(weathercode) {
@@ -52,19 +61,43 @@ function getWeatherStatus(weathercode) {
     }
 }
 
-//HTML COMPONENTS////////////////////////////
-const temperature = document.querySelector(".cantity");
-const weatherStatus = document.querySelector(".weather-status");;
-const todayDate = document.getElementById("date");
-const windSpeed = document.getElementById("windSpeed");
-const humidityNum = document.getElementById("humidityPercentage");
-const progressBar = document.getElementById("progress");
+function changeWeatherIcon(weathercode){
 
-function showCurrentWeatherData(currentTemperature, currentWeather, ws, averageHumidity) {
+}
+
+function showCurrentWeatherData(currentTemperature, currentWeather, windSpeedData, averageHumidity, averageVisibility,averagePressure) {
     temperature.textContent = currentTemperature;
-    windSpeed.textContent = ws;
+    windSpeed.textContent = windSpeedData;
     weatherStatus.textContent = getWeatherStatus(currentWeather);
     humidityNum.textContent = averageHumidity;
     progressBar.style.width = `${averageHumidity}%`;
-    showDate();
+    visibilityNum.textContent = averageVisibility;
+    pressureNum.textContent = averagePressure;
+    // pressureNum.textContent = averageVisibility;
+    changeWeatherIcon(currentWeather);
 }
+
+window.addEventListener("load", () => {
+    todayDate.innerText = showDate();
+    const weeklyPronostic = document.querySelectorAll("[data-pronosticDate]");
+    const dayMax = document.querySelectorAll("[data-weekDayMax]");
+    const dayMin = document.querySelectorAll("[data-weekDayMin]");
+    const weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    let actualDate = new Date();
+    let day = actualDate.getDay();
+    for (let i = 0; i < weeklyPronostic.length; i++) {
+        let dayCode = weeklyPronostic[i].dataset.pronosticdate;
+        if (dayCode == 1) {
+            weeklyPronostic[i].textContent = "Tomorrow";
+        } else{
+            if (day == weekday.length-1) {
+                day = 0;
+                weeklyPronostic[i].textContent = weekday[day];
+            } else{
+                day += 1;
+                weeklyPronostic[i].textContent = weekday[day];
+            }
+        }
+        console.log(weekday[day]);
+    }
+});
