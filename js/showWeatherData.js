@@ -84,7 +84,7 @@ window.addEventListener("load", () => {
     const dayMin = document.querySelectorAll("[data-weekDayMin]");
     const weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     let actualDate = new Date();
-    let day = actualDate.getDay();
+    let day = actualDate.getDay() + 1;
     for (let i = 0; i < weeklyPronostic.length; i++) {
         let dayCode = weeklyPronostic[i].dataset.pronosticdate;
         if (dayCode == 1) {
