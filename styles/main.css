@@ -202,6 +202,12 @@ header .weather .location-container .location {
 .weekly-pronostic .pronostic-card .temperature .min {
   color: #A09FB1;
 }
+.weekly-pronostic .pronostic-card .temperature .unit {
+  color: #E7E7EB;
+}
+.weekly-pronostic .pronostic-card .temperature .unit.min {
+  color: #A09FB1;
+}
 
 .highlights {
   background-color: #100E1D;

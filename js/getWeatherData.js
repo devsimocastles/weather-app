@@ -1,4 +1,5 @@
-import showWeatherData from "./showWeatherData.js";
+
+import {showCurrentWeatherData, showWeeklyPronostic} from './showWeatherData.js';
 import * as getCurrentLocation from "./getLocation.js";
 
 // FUNCTIONS ///////////////////
@@ -28,7 +29,9 @@ function getWeaterData(latitude, longitude){
             const pressure = weatherData.hourly.surface_pressure;
             const averagePressure = calculateAverage(pressure);
 
-            showWeatherData(currentTemperature,currentWeather, windSpeed, averageHumidity, averageVisibility, averagePressure);
+            showCurrentWeatherData(currentTemperature,currentWeather, windSpeed, averageHumidity, averageVisibility, averagePressure);
+         
+            showWeeklyPronostic(weatherData.daily.apparent_temperature_min, weatherData.daily.apparent_temperature_max);
         });
 }
 
