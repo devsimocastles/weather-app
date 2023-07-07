@@ -5,12 +5,14 @@ export default showCurrentWeatherData;
 const temperature = document.querySelector(".cantity");
 const weatherStatus = document.querySelector(".weather-status");;
 const todayDate = document.getElementById("date");
+const mainWeatherImg = document.getElementById("weather_img");
 const windSpeed = document.getElementById("windSpeed");
 const humidityNum = document.getElementById("humidityPercentage");
 const visibilityNum = document.getElementById("visibilityCantity");
 const pressureNum = document.getElementById("airPressureCantity");
 const progressBar = document.getElementById("progress");
 const weeklyPronostic = document.querySelectorAll("[data-pronosticDate]");
+const pronosticImg = document.querySelectorAll("[data-pronosticImg]");
 const dayMax = document.querySelectorAll("[data-weekDayMax]");
 const dayMin = document.querySelectorAll("[data-weekDayMin]");
 
@@ -48,21 +50,74 @@ function getWeatherStatus(weathercode) {
     }
 }
 
-function changeWeatherIcon(weathercode){
-
+function changeWeatherIcon(weathercode) {
+    let imgUrl = "";
+    switch (weathercode) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            imgUrl = "../assets/img/LightCloud.png";
+            break;
+        case 45:
+        case 48:
+            imgUrl = "../assets/img/HeavyCloud.png";
+            break;
+        case 51:
+        case 53:
+        case 55:
+        case 56:
+        case 57:
+            imgUrl = "../assets/img/Shower.png";
+            break;
+        case 61:
+        case 63:
+            imgUrl = "../assets/img/LightRain.png";
+            break;
+        case 65:
+            imgUrl = "../assets/img/HeavyRain.png";
+            break;
+        case 66:
+        case 67:
+        case 80:
+        case 81:
+        case 82:
+        case 85:
+        case 86:
+            imgUrl = "../assets/img/Sleet.png";
+            break;
+        case 71:
+        case 73:
+        case 75:
+            imgUrl = "../assets/img/Snow.png";
+            break;
+        case 77:
+            imgUrl = "../assets/img/Hail.png";
+            break;
+        case 95:
+        case 96:
+        case 99:
+            imgUrl = "../assets/img/Thunderstorm.png";
+            break;
+    }
+    return imgUrl;
 }
 
-function showWeeklyPronostic(min, max){
+function showWeeklyPronostic(min, max, weathercode) {
     for (let i = 0; i < weeklyPronostic.length; i++) {
         dayMax[i].textContent = max[i];
         dayMin[i].textContent = min[i];
+        pronosticImg[i].src = `${changeWeatherIcon(weathercode[i])}`;
+        console.log(pronosticImg[i]);
     }
 }
 
-function showCurrentWeatherData(currentTemperature, currentWeather, windSpeedData, averageHumidity, averageVisibility,averagePressure) {
+function showCurrentWeatherData(currentTemperature, currentWeather, windSpeedData, averageHumidity, averageVisibility, averagePressure) {
     temperature.textContent = currentTemperature;
     windSpeed.textContent = windSpeedData;
     weatherStatus.textContent = getWeatherStatus(currentWeather);
+    mainWeatherImg.src = `${changeWeatherIcon(currentWeather)
+    }`;
     humidityNum.textContent = averageHumidity;
     progressBar.style.width = `${averageHumidity}%`;
     visibilityNum.textContent = averageVisibility;
@@ -78,24 +133,24 @@ todayDate.innerText = showDate();
 
 window.addEventListener("load", () => {
 
-    const weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let actualDate = new Date();
     let day = actualDate.getDay() + 1;
     for (let i = 0; i < weeklyPronostic.length; i++) {
         let dayCode = weeklyPronostic[i].dataset.pronosticdate;
         if (dayCode == 1) {
             weeklyPronostic[i].textContent = "Tomorrow";
-        } else{
-            if (day == weekday.length-1) {
+        } else {
+            if (day == weekday.length - 1) {
                 day = 0;
                 weeklyPronostic[i].textContent = weekday[day];
-            } else{
+            } else {
                 day += 1;
                 weeklyPronostic[i].textContent = weekday[day];
             }
         }
-        
+
     }
 });
 
-export {showCurrentWeatherData, showWeeklyPronostic}
+export { showCurrentWeatherData, showWeeklyPronostic }

@@ -16,7 +16,11 @@ function getWeaterData(latitude, longitude){
         .then((weatherData) => {
 
             console.log(weatherData);
+
             const currentTemperature = parseInt(weatherData.current_weather.temperature);
+
+            const dailyWeather = weatherData.daily.weathercode;
+
             const currentWeather = weatherData.current_weather.weathercode;
             const windSpeed = weatherData.current_weather.windspeed;
 
@@ -31,7 +35,7 @@ function getWeaterData(latitude, longitude){
 
             showCurrentWeatherData(currentTemperature,currentWeather, windSpeed, averageHumidity, averageVisibility, averagePressure);
          
-            showWeeklyPronostic(weatherData.daily.apparent_temperature_min, weatherData.daily.apparent_temperature_max);
+            showWeeklyPronostic(weatherData.daily.apparent_temperature_min, weatherData.daily.apparent_temperature_max, dailyWeather);
         });
 }
 
