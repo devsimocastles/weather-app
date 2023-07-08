@@ -108,7 +108,6 @@ function showWeeklyPronostic(min, max, weathercode) {
         dayMax[i].textContent = max[i];
         dayMin[i].textContent = min[i];
         pronosticImg[i].src = `${changeWeatherIcon(weathercode[i])}`;
-        console.log(pronosticImg[i]);
     }
 }
 
@@ -132,25 +131,16 @@ function showCurrentWeatherData(currentTemperature, currentWeather, windSpeedDat
 todayDate.innerText = showDate();
 
 window.addEventListener("load", () => {
-
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let actualDate = new Date();
-    let day = actualDate.getDay() + 1;
     for (let i = 0; i < weeklyPronostic.length; i++) {
         let dayCode = weeklyPronostic[i].dataset.pronosticdate;
         if (dayCode == 1) {
             weeklyPronostic[i].textContent = "Tomorrow";
-        } else {
-            if (day == weekday.length - 1) {
-                day = 0;
-                weeklyPronostic[i].textContent = weekday[day];
-            } else {
-                day += 1;
-                weeklyPronostic[i].textContent = weekday[day];
-            }
+        } 
+        else{
+            weeklyPronostic[i].textContent = weekday[i];
         }
-
     }
 });
 
-export { showCurrentWeatherData, showWeeklyPronostic }
+export {showCurrentWeatherData, showWeeklyPronostic}
