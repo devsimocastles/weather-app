@@ -12,6 +12,8 @@
     box-shadow: 0px 10px 10px #100e1d75;
     .search-nav{
         @include flex(column,center,center);
+        border-bottom: 1px solid $gray;
+        padding-bottom: 2em;
         .close-icon-container{
             @include flex(row, flex-end,center);
             width: 90%;
@@ -48,6 +50,10 @@
                 background-color: transparent;
                 border: none;
                 font-family: "Raleway", sans-serif;
+                color: whitesmoke;
+                &:focus{
+                    outline: none;
+                }
             }
         }
         #search{
@@ -58,6 +64,20 @@
             color: $whiteSmoke;
             font-size: .9em;
             font-weight: 600;
+        }
+    }
+    .results-container{
+        @include flex(row, center, center);
+        margin: 3em auto;
+        width: 85%;
+        height: 400px;
+        overflow-y: scroll;
+        .results{
+            width: 100%;
+            height: auto;
+            .content{
+                height: 300px;
+            }
         }
     }
 }
