@@ -368,8 +368,11 @@ header .weather .location-container .location {
   font-weight: 600;
 }
 .menu-wrapper #country {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 0.5em;
-  padding-right: 1em;
+  padding-left: 3em;
   display: block;
   margin: 1em 0;
   width: 213px;
@@ -377,10 +380,11 @@ header .weather .location-container .location {
   background-color: transparent;
   border: 1px solid #E7E7EB;
   font-family: "Raleway", sans-serif;
-  color: #6E707A;
+  color: #E7E7EB;
 }
 .menu-wrapper #country option {
-  color: #100E1D;
+  color: #6E707A;
+  font-weight: bold;
 }
 .menu-wrapper #country:focus {
   outline: none;
@@ -394,14 +398,24 @@ header .weather .location-container .location {
   flex-wrap: wrap;
   margin: 3em auto;
   width: 85%;
-  overflow-y: scroll;
 }
 .menu-wrapper .results-container .results {
   width: 100%;
   height: auto;
 }
-.menu-wrapper .results-container .results .content {
-  height: 300px;
+.menu-wrapper .results-container .results button {
+  margin-bottom: 2em;
+  border: 1px solid #6E707A;
+  background-color: transparent;
+  padding: 0.6em 2em;
+  color: #6E707A;
+  font-family: "Raleway", sans-serif;
+}
+.menu-wrapper .results-container .results button:hover {
+  border-color: #E7E7EB;
+  color: #E7E7EB;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 *, *::after, *::before {

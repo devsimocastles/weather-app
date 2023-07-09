@@ -69,8 +69,9 @@
     
 // country search list
 #country{
+    appearance: none;
     padding: .5em;
-    padding-right: 1em;
+    padding-left: 3em;
     display: block;
     margin: 1em 0;
     width: 213px;
@@ -78,9 +79,10 @@
     background-color: transparent;
     border: 1px solid $whiteSmoke;
     font-family: "Raleway", sans-serif;
-    color: $gray;
+    color: $whiteSmoke;
     option{
-        color: $veryDarkPurple;
+        color: $gray;
+        font-weight: bold;
     }
     &:focus{
         outline: none;
@@ -91,12 +93,22 @@
         @include flex(row, center, center);
         margin: 3em auto;
         width: 85%;
-        overflow-y: scroll;
         .results{
             width: 100%;
             height: auto;
-            .content{
-                height: 300px;
+            button{
+                margin-bottom: 2em;
+                border: 1px solid $gray;
+                background-color: transparent;
+                padding: .6em 2em;
+                color: $gray;
+                font-family: "Raleway", sans-serif;
+                &:hover{
+                    border-color: $whiteSmoke;
+                    color: $whiteSmoke;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
     }
