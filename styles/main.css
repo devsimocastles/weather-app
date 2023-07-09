@@ -322,8 +322,8 @@ header .weather .location-container .location {
 }
 .menu-wrapper .search-bar {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex: 0 0 auto;
   flex-wrap: wrap;
@@ -336,7 +336,6 @@ header .weather .location-container .location {
   align-items: center;
   flex: 0 0 auto;
   flex-wrap: wrap;
-  margin-right: 1em;
   outline: 1px solid #E7E7EB;
   padding: 0.75em 1em;
 }
@@ -359,6 +358,7 @@ header .weather .location-container .location {
   outline: none;
 }
 .menu-wrapper .search-bar #search {
+  display: block;
   padding: 1em;
   background-color: #3C47E9;
   border: none;
@@ -366,6 +366,24 @@ header .weather .location-container .location {
   color: #E7E7EB;
   font-size: 0.9em;
   font-weight: 600;
+}
+.menu-wrapper #country {
+  padding: 0.5em;
+  padding-right: 1em;
+  display: block;
+  margin: 1em 0;
+  width: 213px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid #E7E7EB;
+  font-family: "Raleway", sans-serif;
+  color: #6E707A;
+}
+.menu-wrapper #country option {
+  color: #100E1D;
+}
+.menu-wrapper #country:focus {
+  outline: none;
 }
 .menu-wrapper .results-container {
   display: flex;
@@ -376,7 +394,6 @@ header .weather .location-container .location {
   flex-wrap: wrap;
   margin: 3em auto;
   width: 85%;
-  height: 400px;
   overflow-y: scroll;
 }
 .menu-wrapper .results-container .results {
