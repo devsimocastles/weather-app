@@ -8,3 +8,5 @@ function getLocation(latitude, longitude) {
     .then(response => response.json())
     .then(result => locationSpan.innerText = result.locality);
 }
+
+export {getLocation}

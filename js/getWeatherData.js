@@ -57,5 +57,7 @@ locate_btn.addEventListener("click", () => {
 });
 
 
+export {getWeaterData};
+
 
 
