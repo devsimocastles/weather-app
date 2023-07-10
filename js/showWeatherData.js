@@ -121,11 +121,9 @@ function showCurrentWeatherData(currentTemperature, currentWeather, windSpeedDat
     progressBar.style.width = `${averageHumidity}%`;
     visibilityNum.textContent = averageVisibility;
     pressureNum.textContent = averagePressure;
-    // pressureNum.textContent = averageVisibility;
-    changeWeatherIcon(currentWeather);
-    // for (let i = 0; i < weeklyPronostic.length; i++) {
-    //     dayMax[i]
-    // }
+
+    
+
 }
 
 todayDate.innerText = showDate();
@@ -138,7 +136,7 @@ window.addEventListener("load", () => {
             weeklyPronostic[i].textContent = "Tomorrow";
         } 
         else{
-            weeklyPronostic[i].textContent = weekday[i];
+            weeklyPronostic[i].textContent = weekday[i+1];
         }
     }
 });

@@ -7,13 +7,11 @@
     height: 640px;
     right: 0;
     left: 0;
-    bottom: 100%;
+    bottom: 105%;
     transition: all .3s ease;
     box-shadow: 0px 10px 10px #100e1d75;
     .search-nav{
         @include flex(column,center,center);
-        border-bottom: 1px solid $gray;
-        padding-bottom: 2em;
         .close-icon-container{
             @include flex(row, flex-end,center);
             width: 90%;
@@ -46,6 +44,7 @@
                 }
             }
             #location{
+                appearance: none;
                 background-color: transparent;
                 border: none;
                 font-family: "Raleway", sans-serif;
@@ -102,7 +101,7 @@
             }
             button{
                 display: block;
-                margin: 2em auto;
+                margin-bottom: 2em;
                 border: 1px solid $gray;
                 background-color: transparent;
                 padding: .6em 2em;

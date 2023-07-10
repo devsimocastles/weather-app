@@ -39,7 +39,7 @@
               <path
                 d="M796-121 533-384q-30 26-69.959 40.5T378-329q-108.162 0-183.081-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.125-57.5T572-585q0-81-56.875-138.5T377-781q-82.083 0-139.542 57.5Q180-666 180-585t57.458 138.5Q294.917-389 377-389Z" />
             </svg>
-            <input type="text" id="location" placeholder="Search City">
+            <input type="text" id="location" placeholder="Search City" autocomplete="off">
           </div>
           <select id="country">
             <option value="" selected>Select your country</option>
@@ -316,6 +316,7 @@
       </div>
     </section>
   </header>
+  <div class="content_wrapper">
   <section class="weekly-pronostic">
     <article class="pronostic-card">
       <header>
@@ -372,52 +373,54 @@
     <header>
       <h3>Today's Highlights</h3>
     </header>
-    <article class="weather-data">
-      <header>
-        <h4>Wind Status</h4>
-      </header>
-      <div class="data-container">
-        <span id="windSpeed" class="cantity">-</span><span class="unit"> km/h</span>
-      </div>
-    </article>
-    <article class="weather-data">
-      <header>
-        <h4>Humidity</h4>
-      </header>
-      <div class="data-container">
+    <div class="weatherCardContainer">
+      <article class="weather-data">
+        <header>
+          <h4>Wind Status</h4>
+        </header>
         <div class="data-container">
-          <span id="humidityPercentage" class="cantity">-</span> <span class="unit">%</span>
+          <span id="windSpeed" class="cantity">-</span><span class="unit"> km/h</span>
         </div>
-        <div class="progress-bar">
-          <div class="indicator">
-            <span>0</span>
-            <span>50</span>
-            <span>100</span>
+      </article>
+      <article class="weather-data">
+        <header>
+          <h4>Humidity</h4>
+        </header>
+        <div class="data-container">
+          <div class="data-container">
+            <span id="humidityPercentage" class="cantity">-</span> <span class="unit">%</span>
           </div>
-          <div class="bar">
-            <div id="progress"></div>
+          <div class="progress-bar">
+            <div class="indicator">
+              <span>0</span>
+              <span>50</span>
+              <span>100</span>
+            </div>
+            <div class="bar">
+              <div id="progress"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
-    <article class="weather-data">
-      <header>
-        <h4>Visibility</h4>
-      </header>
-      <div class="data-container">
-        <span id="visibilityCantity" class="cantity">-</span><span class="unit"> m</span>
-      </div>
-    </article>
-    <article class="weather-data">
-      <header>
-        <h4>Air Pressure</h4>
-      </header>
-      <div class="data-container">
-        <span id="airPressureCantity" class="cantity">- </span><span class="unit">hPa</span>
-      </div>
-    </article>
-  </section>
-
+      </article>
+      <article class="weather-data">
+        <header>
+          <h4>Visibility</h4>
+        </header>
+        <div class="data-container">
+          <span id="visibilityCantity" class="cantity">-</span><span class="unit"> m</span>
+        </div>
+      </article>
+      <article class="weather-data">
+        <header>
+          <h4>Air Pressure</h4>
+        </header>
+        <div class="data-container">
+          <span id="airPressureCantity" class="cantity">- </span><span class="unit">hPa</span>
+        </div>
+      </article>
+    </section>
+  </div>
+    </div>  
   <script src="js/searchMenu.js"></script>
   <script type="module" src="js/getLocation.js"></script>
   <script type="module" src="js/getCoords.js"></script>

@@ -6,7 +6,7 @@ searchCb.addEventListener("click", (e) => {
     let closeBtn = document.getElementById("close-btn");
     menuWrapper.style.bottom = ((mainWeatherSection.clientHeight - menuWrapper.clientHeight)*1)+"px";
     closeBtn.addEventListener("click", () => {
-        menuWrapper.style.bottom = "100%";
+        menuWrapper.style.bottom = "105%";
   
     })
 

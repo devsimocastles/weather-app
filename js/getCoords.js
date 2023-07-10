@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
         .then((rowData) => rowData.json())
         .then((result) => {
 
-            if (result.total_results <= 1) {
+            if (result.total_results < 1) {
                 alert("No results have been found!")
             } else {
                 // creating the result component

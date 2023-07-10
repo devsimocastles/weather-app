@@ -1,6 +1,6 @@
 
 import {showCurrentWeatherData, showWeeklyPronostic} from './showWeatherData.js';
-import * as getCurrentLocation from "./getLocation.js";
+import { getLocation } from './getLocation.js';
 
 // FUNCTIONS ///////////////////
 function calculateAverage(dataArr){
