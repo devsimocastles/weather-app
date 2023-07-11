@@ -414,12 +414,17 @@ header .weather .location-container .location {
 }
 .menu-wrapper .results-container .results button {
   display: block;
+  width: 100%;
+  text-align: center;
   margin-bottom: 2em;
   border: 1px solid #6E707A;
   background-color: transparent;
   padding: 0.6em 2em;
   color: #6E707A;
   font-family: "Raleway", sans-serif;
+}
+.menu-wrapper .results-container .results button:first-of-type {
+  margin-top: 2em;
 }
 .menu-wrapper .results-container .results button:hover {
   border-color: #E7E7EB;

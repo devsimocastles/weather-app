@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
             } else {
                 // creating the result component
                 console.log(result.results);
-                result_container.innerText = "";
+                result_container.innerText = "Results:";
                 for (let i = 0; i < result.results.length; i++) {
                     let result_btn = document.createElement("button");
                     result_btn.classList.add("result_btn");
