@@ -136,7 +136,7 @@ window.addEventListener("load", () => {
             weeklyPronostic[i].textContent = "Tomorrow";
         } 
         else{
-            weeklyPronostic[i].textContent = weekday[i+1];
+            weeklyPronostic[i].textContent = weekday[i+2];
         }
     }
 });

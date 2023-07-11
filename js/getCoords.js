@@ -21,7 +21,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let encodeParameters = encodeURI(`${search_bar.value},+${country.value}`);
     const geocodeApiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeParameters}&key=43989616dfc84015b6fe9bb9ff53db9e&language=es&pretty=1`;
-    console.log(geocodeApiUrl);
+    result_container.innerText = "Loading...";
     fetch(encodeURI(geocodeApiUrl))
         .then((rowData) => rowData.json())
         .then((result) => {
@@ -31,6 +31,7 @@ form.addEventListener("submit", (e) => {
             } else {
                 // creating the result component
                 console.log(result.results);
+                result_container.innerText = "";
                 for (let i = 0; i < result.results.length; i++) {
                     let result_btn = document.createElement("button");
                     result_btn.classList.add("result_btn");
